@@ -1,4 +1,4 @@
-name: bankqa-hermessonyuri-portfolio-ci
+name: bankqa-hermessonyuri-ci
 
 on:
   push:
