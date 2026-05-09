@@ -677,12 +677,20 @@ Qualidade é entender o negócio, pensar em riscos, questionar cenários, valida
 
 Cada teste escrito, cada cenário analisado e cada erro documentado faz parte da sua evolução profissional.
 
-No dia **01/12/2025**, tudo começou em minha vida como QA. Eu não fazia ideia do que realmente era essa área. Já tinha ouvido falar, mas achava que QA era apenas ficar encontrando “bugs”. Quando iniciei como **Estagiário de QA de Software**, percebi que a realidade era muito maior.
-Cometi erros, sim. Falhei algumas vezes, mas não desisti. Eu me dediquei, procurei ajuda dos devs e tive o apoio de uma pessoa que faço questão de citar aqui: **Attus**.
-Esse cara me ajudou a me tornar quem estou me tornando hoje. Ele se tornou como um irmão para mim. Me deu várias dicas, me ensinou regras, me mostrou formas melhores de agir, de me comportar profissionalmente e até de reagir diante dos erros.
-Não sinto vergonha de falar isso, porque é errando que se aprende. Melhor ainda é aprender antes de errar, mas os nossos erros também nos fortalecem. E o Attus me ajudou a enxergar esse mundo de uma forma diferente.
+No dia **01/12/2025**, tudo começou em minha vida como QA. Eu não fazia ideia do que realmente era essa área. Já tinha ouvido falar, mas achava que QA era apenas ficar encontrando “bugs”. Quando recebi a oportunidade da **Patrícia** para iniciar como **Estagiário de QA de Software**, percebi que a realidade era muito maior.
+
+Sou muito Apreciativo pela oportunidade que a **Patrícia** me deu.
+
+Entrei nesse mundo, cometi erros, sim. Falhei algumas vezes, mas não desisti. Eu me dediquei, procurei ajuda dos devs e tive o apoio de pessoas que faço questão de citar aqui: **Attus** e **Gustavo**.
+
+Esses caras me ajudaram a me tornar quem estou me tornando hoje. Eles se tornaram como irmãos para mim. Deram várias dicas, ensinaram regras, mostraram formas melhores de agir, de me comportar profissionalmente e até de reagir diante dos erros.
+
+Não sinto vergonha de falar isso, porque é errando que se aprende. Melhor ainda é aprender antes de errar, mas os nossos erros também nos fortalecem. O **Attus** me ajudou a enxergar esse mundo de uma forma diferente. **Gustavo** e **Attus** são exemplos de profissionais que mostram, na prática, o verdadeiro valor do trabalho em **EQUIPE**.
+
 Por que estou dizendo isso?
+
 Porque quero que você saiba: se você pensa que vai fazer tudo sozinho, provavelmente não irá muito longe. Não tenha medo. Não sinta vergonha. Peça ajuda, corra atrás, estude, pratique e esteja disposto a aprender.
+
 É isso que vai fazer você evoluir e chegar ao sucesso. Então:
 
 Continue estudando, praticando e construindo projetos reais.  
