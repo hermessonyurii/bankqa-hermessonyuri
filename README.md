@@ -1,4 +1,4 @@
-# bankqa-hermessonyuri-portfolio
+# bankqa-hermessonyuri
 
 ![Node.js](https://img.shields.io/badge/Node.js-22-green)
 ![Express](https://img.shields.io/badge/Express-4-black)
@@ -7,7 +7,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED)
 ![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-2088FF)
 
-Projeto de portfólio criado para demonstrar minha atuação em QA com foco em sistema transacional, testes de API, fluxos financeiros e automação com JavaScript.
+Projeto de portfólio desenvolvido para demonstrar práticas de QA em um sistema bancário transacional, com foco em testes de API, fluxos financeiros, automação E2E, Docker e integração contínua.
 
 Autor: **Hermesson Yuri**  
 LinkedIn: https://www.linkedin.com/in/hermesson-yuri/  
@@ -17,19 +17,24 @@ GitHub: https://github.com/hermessonyurii
 
 ## About
 
-O **bankqa-hermessonyuri-portfolio** simula um sistema bancário simples com:
+O **bankqa-hermessonyuri** simula um sistema bancário simples com:
+
 - cadastro de usuário
 - login com JWT
 - depósito
 - saque
 - transferência entre contas
-- extrato
+- consulta de saldo e extrato
 
-A proposta aqui não foi fazer um banco "bonito". O foco foi montar um sistema pequeno, mas com regras de negócio claras o suficiente para um QA demonstrar:
-- visão de risco
-- cobertura de cenário feliz e negativo
-- organização de automação
-- leitura de fluxo transacional
+A proposta do projeto é validar regras de negócio críticas em um contexto financeiro, permitindo demonstrar:
+
+- visão de risco em fluxos transacionais
+- cobertura de cenários positivos e negativos
+- automação de testes E2E e API
+- organização de massa de dados para testes
+- documentação técnica voltada para QA
+- execução local com Docker
+- pipeline CI com GitHub Actions
 
 ---
 
@@ -37,14 +42,15 @@ A proposta aqui não foi fazer um banco "bonito". O foco foi montar um sistema p
 
 - API REST em Node.js + Express
 - Banco MySQL com Docker
-- UI mínima para cobrir E2E real
+- Interface mínima para execução de fluxos E2E
 - Hash de senha com bcrypt
-- JWT para autenticação
+- Autenticação com JWT
 - Queries parametrizadas
 - Transações financeiras com controle transacional
-- Cypress para E2E e API testing
-- Postman collection pronta para importar
+- Testes automatizados com Cypress
+- Postman Collection pronta para importação
 - Pipeline com GitHub Actions
+- Documentação de QA em `/docs`
 
 ---
 
@@ -55,6 +61,7 @@ A proposta aqui não foi fazer um banco "bonito". O foco foi montar um sistema p
 - **Tests:** Cypress, Postman
 - **Containerization:** Docker, Docker Compose
 - **CI/CD:** GitHub Actions
+- **Language:** JavaScript
 
 ---
 
@@ -73,13 +80,15 @@ flowchart TD
 ### Estrutura principal
 
 ```text
-bankqa-hermessonyuri-portfolio/
+bankqa-hermessonyuri/
 ├── app/
 ├── database/
 ├── tests/
 ├── docs/
 ├── .github/
 ├── docker-compose.yml
+├── package.json
+├── .env.example
 └── README.md
 ```
 
@@ -87,73 +96,190 @@ bankqa-hermessonyuri-portfolio/
 
 ## How to Run
 
-### 1) Setup Local
-```bash
-# Clone o repositório
-git clone https://github.com/hermessonyurii/bankqa-hermessonyuri-portfolio.git
-cd bankqa-hermessonyuri-portfolio
+### 1) Clone o repositório
 
-# Copie o arquivo de exemplo de variáveis de ambiente
+```bash
+git clone https://github.com/hermessonyurii/bankqa-hermessonyuri.git
+cd bankqa-hermessonyuri
+```
+
+### 2) Configure as variáveis de ambiente
+
+```bash
 cp .env.example .env
+```
 
-# Edite .env com valores reais (mantenha JWT_SECRET secreto)
-# Exemplo:
-# JWT_SECRET=your-secret-here
+Edite o arquivo `.env` conforme necessário.
 
-# Instale dependências
+Exemplo:
+
+```env
+JWT_SECRET=your-secret-here
+```
+
+> Nunca versionar arquivos `.env` reais. O projeto mantém apenas `.env.example` como referência.
+
+### 3) Instale as dependências
+
+```bash
 npm install
 ```
 
-### 2) Subir a stack com Docker
+### 4) Suba a stack com Docker
+
 ```bash
-docker compose up --build
+docker compose up -d --build
 ```
 
-### 3) Instalar dependências do workspace
+### 5) Valide o healthcheck
+
 ```bash
-npm install
+curl http://localhost:3000/api/health
 ```
 
-### 4) Rodar os testes E2E
+Resultado esperado:
+
+```json
+{
+  "status": "ok"
+}
+```
+
+---
+
+## Running Tests
+
+### Rodar testes E2E
+
 ```bash
 npm run test:e2e
 ```
 
-### 5) Abrir Cypress em modo interativo
+### Rodar testes de API
+
+```bash
+npm run test:api
+```
+
+### Abrir Cypress em modo interativo
+
 ```bash
 npm run test:open
 ```
 
-### 6) Usar Postman
-- Importe `tests/postman/BankQA.postman_collection.json`
-- Configure ambiente com `tests/postman/BankQA.local.postman_environment.json`
-- Base URL: `http://localhost:3000/api`
+---
+
+## Postman
+
+Para executar os testes manualmente via Postman:
+
+1. Importe a collection:
+
+```text
+tests/postman/BankQA.postman_collection.json
+```
+
+2. Importe o environment:
+
+```text
+tests/postman/BankQA.local.postman_environment.json
+```
+
+3. Configure a base URL:
+
+```text
+http://localhost:3000/api
+```
+
+4. Execute o fluxo:
+
+```text
+Health -> Register User -> Login -> Account Summary -> Deposit -> Withdraw -> Transfer
+```
+
+As rotas autenticadas exigem o header:
+
+```text
+Authorization: Bearer {{token}}
+```
 
 ---
 
 ## API Endpoints
 
 ### Health
-- `GET /api/health`
+
+| Method | Endpoint | Auth |
+|---|---|---|
+| GET | `/api/health` | Não |
 
 ### Auth
-- `POST /api/auth/register`
-  - Payload: `{ "fullName": "string", "email": "string", "documentNumber": "string", "password": "string" }`
-- `POST /api/auth/login`
-  - Payload: `{ "email": "string", "password": "string" }`
 
-### Account (Autenticado)
-- `GET /api/account/summary`
-- `POST /api/account/deposit`
-  - Payload: `{ "amount": number, "description": "string" }`
-- `POST /api/account/withdraw`
-  - Payload: `{ "amount": number, "description": "string" }`
-- `POST /api/account/transfer`
-  - Payload: `{ "destinationAccountNumber": "string", "amount": number, "description": "string" }`
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| POST | `/api/auth/register` | Não | Cadastro de usuário |
+| POST | `/api/auth/login` | Não | Login e geração de token JWT |
+
+#### Register payload
+
+```json
+{
+  "fullName": "Hermesson Yuri",
+  "email": "hermesson.yuri.qa@example.com",
+  "documentNumber": "12345678901",
+  "password": "Password123!"
+}
+```
+
+#### Login payload
+
+```json
+{
+  "email": "hermesson.yuri.qa@example.com",
+  "password": "Password123!"
+}
+```
+
+### Account
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/api/account/summary` | Sim | Consulta de saldo e dados da conta |
+| POST | `/api/account/deposit` | Sim | Depósito em conta |
+| POST | `/api/account/withdraw` | Sim | Saque em conta |
+| POST | `/api/account/transfer` | Sim | Transferência entre contas |
+
+#### Deposit payload
+
+```json
+{
+  "amount": 100,
+  "description": "Depósito inicial"
+}
+```
+
+#### Withdraw payload
+
+```json
+{
+  "amount": 50,
+  "description": "Saque teste"
+}
+```
+
+#### Transfer payload
+
+```json
+{
+  "destinationAccountNumber": "260000000222",
+  "amount": 25,
+  "description": "Transferência teste"
+}
+```
 
 ---
 
-## Seed user for tests
+## Seed User for Tests
 
 ```json
 {
@@ -164,6 +290,7 @@ npm run test:open
 ```
 
 Conta destino para transferência:
+
 ```text
 260000000222
 ```
@@ -173,29 +300,34 @@ Conta destino para transferência:
 ## Test Coverage
 
 ### E2E / UI
-- user registration
-- user login
-- deposit flow
-- withdraw flow
-- transfer flow
-- statement flow
 
-### API / health
-- healthcheck endpoint
-- auth endpoints (register, login)
-- account endpoints (summary, deposit, withdraw, transfer)
+- cadastro de usuário
+- login de usuário
+- fluxo de depósito
+- fluxo de saque
+- fluxo de transferência
+- consulta de saldo e extrato
 
-### Negativos
-- saque maior que saldo
-- transferência inválida
+### API
+
+- healthcheck
+- cadastro
+- login
+- consulta de resumo da conta
+- depósito
+- saque
+- transferência
+
+### Cenários negativos
+
+- saque maior que o saldo disponível
+- transferência maior que o saldo disponível
+- transferência para conta inválida ou inexistente
 - valores negativos
-
-### Postman
-A collection exportada está em:
-
-```text
-tests/postman/BankQA.postman_collection.json
-```
+- valores zerados
+- autenticação ausente
+- token inválido
+- dados obrigatórios ausentes
 
 ---
 
@@ -203,40 +335,41 @@ tests/postman/BankQA.postman_collection.json
 
 ```mermaid
 flowchart LR
-    A[Push / PR] --> B[GitHub Actions]
-    B --> C[npm install]
-    C --> D[docker compose up -d --build]
-    D --> E[healthcheck]
-    E --> F[Cypress run]
+    A[Push / Pull Request] --> B[GitHub Actions]
+    B --> C[Install dependencies]
+    C --> D[Docker Compose Up]
+    D --> E[Healthcheck]
+    E --> F[Cypress Tests]
     F --> G[Artifacts]
 ```
 
-O workflow fica em:
+O workflow está localizado em:
+
 ```text
 .github/workflows/ci.yml
 ```
 
-Badge: ![CI](https://github.com/hermessonyurii/bankqa-hermessonyuri-portfolio/workflows/bankqa-hermessonyuri-portfolio-ci/badge.svg)
+Badge:
+
+![CI](https://github.com/hermessonyurii/bankqa-hermessonyuri/actions/workflows/ci.yml/badge.svg)
 
 ---
 
-## Observações de QA
+## QA Notes
 
-Algumas decisões foram intencionais para dar mais consistência ao projeto:
+Algumas decisões técnicas foram aplicadas para reforçar a consistência dos testes e dos fluxos financeiros:
 
-- usei `DECIMAL(15,2)` para saldo e movimentação
-- saque e transferência usam transação com `FOR UPDATE`
-- o login automático em alguns testes reduz ruído quando o foco do cenário é saldo ou extrato
-- a UI é mínima de propósito, porque o objetivo aqui é validar regra e fluxo, e sem contar que estou aprendendo muita coisa.
----
-
-## Troubleshooting
-
-Verifique `docs/troubleshooting.md` para problemas comuns.
+- uso de `DECIMAL(15,2)` para valores monetários
+- saque e transferência com controle transacional
+- uso de `FOR UPDATE` em operações críticas
+- autenticação via JWT em rotas protegidas
+- testes cobrindo cenário feliz, negativo e validações de regra de negócio
+- UI mínima para permitir validação E2E real sem desviar o foco do objetivo principal do projeto
+- Postman Collection para apoio em testes exploratórios e validação manual da API
 
 ---
 
-## Documentação
+## Documentation
 
 - [Estratégia de Testes](docs/test-strategy.md)
 - [Plano de Testes](docs/test-plan.md)
@@ -245,6 +378,33 @@ Verifique `docs/troubleshooting.md` para problemas comuns.
 - [Schema do Banco](docs/database-schema.md)
 - [Casos de Teste Manuais](docs/manual-test-cases.md)
 - [Evidências](docs/evidence/)
+- [Troubleshooting](docs/troubleshooting.md)
+
+---
+
+## Troubleshooting
+
+Problemas comuns de execução local, Docker, Cypress, Postman e ambiente estão documentados em:
+
+```text
+docs/troubleshooting.md
+```
+
+---
+
+## Project Purpose
+
+Este projeto foi estruturado para demonstrar habilidades práticas em QA, incluindo:
+
+- análise de regras de negócio
+- testes de API
+- testes E2E
+- automação com Cypress
+- uso de Postman
+- Docker para ambiente local
+- GitHub Actions para CI
+- documentação técnica
+- organização de projeto para portfólio profissional
 
 ---
 
