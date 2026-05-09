@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | BankQA</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-showcase">
+      <a class="auth-brand" href="/">
+        <img
+          class="auth-brand-icon-img"
+          src="/assets/icons/3d/3dicons-credit-card-front-premium.png"
+          alt="BankQA"
+        />
+        <strong>Bank<span>QA</span></strong>
+      </a>
+
+      <span class="auth-badge">
+        <img class="badge-icon-3d" src="/assets/icons/3d/3dicons-wallet-dynamic-color.png" alt="" />
+        Abertura de conta
+      </span>
+
+      <h1>Crie sua conta e teste um fluxo bancário completo.</h1>
+
+      <p>
+        Cadastro criado para demonstrar uma jornada simples, validável e com
+        base adequada para testes manuais, testes automatizados e validação de API.
+      </p>
+
+      <div class="auth-highlights">
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-key-front-color.png" alt="" />
+          <div>
+            <strong>Dados obrigatórios</strong>
+            <p>Nome, e-mail, CPF e senha usados para criação da conta.</p>
+          </div>
+        </div>
+
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-file-text-iso-color.png" alt="" />
+          <div>
+            <strong>Validação de formulário</strong>
+            <p>Campos preparados para cenários felizes e cenários negativos.</p>
+          </div>
+        </div>
+
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-tick-dynamic-color.png" alt="" />
+          <div>
+            <strong>Pronto para QA</strong>
+            <p>Fluxo coberto por teste E2E com Cypress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-form-card">
+      <div class="auth-form-header">
+        <img class="auth-form-main-icon" src="/assets/icons/3d/3dicons-wallet-dynamic-color.png" alt="" />
+        <p>BankQA Portfolio</p>
+        <h1>Criar conta</h1>
+        <span>Preencha os dados abaixo para registrar uma nova conta bancária.</span>
+      </div>
+
+      <form id="register-form" class="auth-form">
+        <label class="form-label">
+          Nome completo
+          <input
+            class="auth-input"
+            data-cy="register-full-name"
+            name="fullName"
+            placeholder="Digite seu nome completo"
+            autocomplete="name"
+            required
+          />
+        </label>
+
+        <label class="form-label">
+          E-mail
+          <input
+            class="auth-input"
+            data-cy="register-email"
+            name="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+            autocomplete="email"
+            required
+          />
+        </label>
+
+        <label class="form-label">
+          CPF
+          <input
+            class="auth-input"
+            data-cy="register-document"
+            name="documentNumber"
+            placeholder="Digite seu CPF"
+            inputmode="numeric"
+            required
+          />
+        </label>
+
+        <label class="form-label">
+          Senha
+          <input
+            class="auth-input"
+            data-cy="register-password"
+            name="password"
+            type="password"
+            placeholder="Crie uma senha"
+            autocomplete="new-password"
+            required
+          />
+        </label>
+
+        <button class="auth-submit" data-cy="register-submit" type="submit">
+          Cadastrar
+        </button>
+      </form>
+
+      <p id="feedback" class="feedback" data-cy="register-feedback"></p>
+
+      <div class="auth-links">
+        <a class="link" href="/login">Já tenho conta</a>
+        <a class="link" href="/">Voltar para início</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

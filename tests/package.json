@@ -1,0 +1,16 @@
+{
+  "name": "bankqa-hermessonyuri-portfolio-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+  "test:e2e": "cypress run --spec \"cypress/e2e/**/*.cy.js\"",
+  "test:api": "cypress run --spec \"cypress/e2e/health/*.cy.js,cypress/e2e/auth/*.cy.js,cypress/e2e/transactions/*.cy.js\"",
+  "test:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^12.17.4"
+  },
+  "dependencies": {
+    "axios": "^1.16.0"
+  }
+}

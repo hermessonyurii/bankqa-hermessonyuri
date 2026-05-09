@@ -1,0 +1,7 @@
+flowchart LR
+    A[Push / PR] --> B[GitHub Actions]
+    B --> C[npm install]
+    C --> D[docker compose up -d --build]
+    D --> E[healthcheck]
+    E --> F[Cypress run]
+    F --> G[Artifacts]

@@ -1,0 +1,20 @@
+{
+  "name": "bankqa-hermessonyuri-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio de QA com sistema bancário simples, API, E2E, Postman e CI/CD.",
+  "workspaces": [
+    "app",
+    "tests"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w app",
+    "start": "npm run start -w app",
+    "test:e2e": "npm run test:e2e -w tests",
+    "test:api": "npm run test:api -w tests",
+    "test:open": "npm run test:open -w tests"
+  },
+  "devDependencies": {
+    "cypress": "^15.14.2"
+  }
+}

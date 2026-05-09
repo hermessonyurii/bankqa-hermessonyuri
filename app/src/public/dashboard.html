@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | BankQA</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="dashboard-page">
+  <main class="dashboard-shell">
+    <section class="panel dashboard-hero">
+      <div class="dashboard-topbar">
+        <div class="dashboard-heading">
+          <span class="dashboard-kicker">
+            <img class="dashboard-icon-3d" src="/assets/icons/3d/hand-giving-money-sack.png" alt="" />
+            Painel BankQA
+          </span>
+
+          <h1>Painel da conta</h1>
+
+          <p>
+            Gerencie as principais operações financeiras do projeto:
+            depósito, saque, transferência entre contas e consulta de extrato.
+          </p>
+        </div>
+
+        <div class="dashboard-user-area">
+          <div class="user-pill">
+            <img class="dashboard-icon-3d" src="/assets/icons/3d/3dicons-key-front-color.png" alt="" />
+            Hermesson Yuri
+          </div>
+
+          <button
+            id="logout-button"
+            class="dashboard-logout"
+            data-cy="logout-button"
+            type="button"
+          >
+            Sair
+          </button>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-card-header">
+            <img class="summary-icon-3d" src="/assets/icons/3d/3dicons-dollar-dynamic-color.png" alt="" />
+            <small>Saldo disponível</small>
+          </div>
+
+          <div class="balance-value">
+            R$ <span data-cy="account-balance">0.00</span>
+          </div>
+
+          <div class="summary-meta">
+            Saldo atualizado conforme as transações realizadas no ambiente.
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-header">
+            <img class="summary-icon-3d" src="/assets/icons/3d/3dicons-credit-card-front-premium.png" alt="" />
+            <small>Conta bancária</small>
+          </div>
+
+          <div class="account-number-display" data-cy="account-number">-</div>
+
+          <div class="summary-meta summary-list">
+            <div>
+              <span>Status</span>
+              <strong>Ativa</strong>
+            </div>
+
+            <div>
+              <span>Ambiente</span>
+              <strong>Portfólio QA</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="operations-grid">
+      <section class="panel action-panel">
+        <div class="panel-title-row">
+          <img class="panel-icon-3d" src="/assets/icons/3d/3dicons-money-dynamic-color.png" alt="" />
+          <div>
+            <h2>Depósito</h2>
+            <p class="panel-description">
+              Registre entrada de valor para validar atualização de saldo e extrato.
+            </p>
+          </div>
+        </div>
+
+        <form id="deposit-form" class="form-inline">
+          <label class="input-label">
+            Valor
+            <input
+              data-cy="deposit-amount"
+              name="amount"
+              placeholder="Ex.: 150.00"
+            />
+          </label>
+
+          <button
+            class="dashboard-action-button"
+            data-cy="deposit-submit"
+            type="submit"
+          >
+            Depositar
+          </button>
+        </form>
+      </section>
+
+      <section class="panel action-panel">
+        <div class="panel-title-row">
+          <img class="panel-icon-3d" src="/assets/icons/3d/3dicons-money-bag-dynamic-color.png" alt="" />
+          <div>
+            <h2>Saque</h2>
+            <p class="panel-description">
+              Simule retirada de valor para validar regra de saldo disponível.
+            </p>
+          </div>
+        </div>
+
+        <form id="withdraw-form" class="form-inline">
+          <label class="input-label">
+            Valor
+            <input
+              data-cy="withdraw-amount"
+              name="amount"
+              placeholder="Ex.: 50.00"
+            />
+          </label>
+
+          <button
+            class="dashboard-action-button"
+            data-cy="withdraw-submit"
+            type="submit"
+          >
+            Sacar
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <section class="panel transfer-panel">
+      <div class="panel-title-row">
+        <img class="panel-icon-3d" src="/assets/icons/3d/3dicons-call-out-dynamic-color.png" alt="" />
+        <div>
+          <h2>Transferência</h2>
+          <p class="panel-description">
+            Transfira valores entre contas para validar débito, crédito e referência.
+          </p>
+        </div>
+      </div>
+
+      <form id="transfer-form" class="form">
+        <label class="input-label">
+          Conta destino
+          <input
+            data-cy="transfer-account"
+            name="destinationAccountNumber"
+            placeholder="Informe o número da conta destino"
+          />
+        </label>
+
+        <label class="input-label">
+          Valor
+          <input
+            data-cy="transfer-amount"
+            name="amount"
+            placeholder="Ex.: 100.00"
+          />
+        </label>
+
+        <button
+          class="dashboard-action-button"
+          data-cy="transfer-submit"
+          type="submit"
+        >
+          Transferir
+        </button>
+      </form>
+    </section>
+
+    <section class="panel statement-panel">
+      <div class="statement-header">
+        <div class="panel-title-row">
+          <img class="panel-icon-3d" src="/assets/icons/3d/3dicons-chart-iso-color.png" alt="" />
+          <div>
+            <h2>Extrato</h2>
+            <p class="panel-description">
+              Consulte o histórico de movimentações geradas durante os testes.
+            </p>
+          </div>
+        </div>
+
+        <button
+          id="refresh-button"
+          class="dashboard-action-button"
+          data-cy="refresh-summary"
+          type="button"
+        >
+          Atualizar extrato
+        </button>
+      </div>
+
+      <p id="feedback" class="feedback" data-cy="dashboard-feedback"></p>
+
+      <div class="statement-table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Referência</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody data-cy="statement-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portfolio-footer dashboard-footer">
+    <p>Desenvolvido por <strong>Hermesson Yuri</strong> • QA de Software</p>
+
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/hermesson-yuri/" target="_blank" rel="noopener noreferrer">
+        <img class="social-icon-3d" src="/assets/icons/3d/3dicons-linkedin-front-color.png" alt="" />
+        LinkedIn
+      </a>
+
+      <a href="https://github.com/hermessonyurii" target="_blank" rel="noopener noreferrer">
+        <img class="social-icon-3d" src="/assets/icons/3d/3dicons-computer-dynamic-color.png" alt="" />
+        GitHub
+      </a>
+
+      <a href="https://www.instagram.com/hermessonyuri.yah/" target="_blank" rel="noopener noreferrer">
+        <img class="social-icon-3d" src="/assets/icons/3d/3dicons-instagram-front-color.png" alt="" />
+        Instagram
+      </a>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

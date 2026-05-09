@@ -1,0 +1,7 @@
+flowchart TD
+    Browser[Browser / Cypress E2E] --> UI[UI mínima em Express]
+    UI --> API[API Express]
+    API --> Services[Services]
+    Services --> Repositories[Repositories]
+    Repositories --> MySQL[(MySQL 8.4)]
+    Postman[Postman Collection] --> API

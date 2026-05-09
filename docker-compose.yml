@@ -1,0 +1,48 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: bankqa-hermessonyuri-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${DB_NAME:-bankqa}
+      MYSQL_USER: ${DB_USER:-bankqa_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-bankqa_pass}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/01-init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./database/02-seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: bankqa-hermessonyuri-app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./.env.example
+    environment:
+      NODE_ENV: production
+      APP_PORT: 3000
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-bankqa}
+      DB_USER: ${DB_USER:-bankqa_user}
+      DB_PASSWORD: ${DB_PASSWORD:-bankqa_pass}
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
+      BCRYPT_SALT_ROUNDS: ${BCRYPT_SALT_ROUNDS:-10}
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:

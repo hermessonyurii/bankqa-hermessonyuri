@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | BankQA</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-showcase">
+      <a class="auth-brand" href="/">
+        <img
+          class="auth-brand-icon-img"
+          src="/assets/icons/3d/3dicons-credit-card-front-premium.png"
+          alt="BankQA"
+        />
+        <strong>Bank<span>QA</span></strong>
+      </a>
+
+      <span class="auth-badge">
+        <img class="badge-icon-3d" src="/assets/icons/3d/3dicons-lock-dynamic-color.png" alt="" />
+        Acesso seguro
+      </span>
+
+      <h1>Entre na sua conta com segurança e qualidade.</h1>
+
+      <p>
+        Ambiente de demonstração criado por Hermesson Yuri para validar fluxos
+        bancários com foco em QA, automação de testes, API e boas práticas.
+      </p>
+
+      <div class="auth-highlights">
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-tick-dynamic-color.png" alt="" />
+          <div>
+            <strong>Fluxos críticos cobertos</strong>
+            <p>Login, cadastro, depósito, saque, transferência e extrato.</p>
+          </div>
+        </div>
+
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-setting-dynamic-color.png" alt="" />
+          <div>
+            <strong>Automação E2E</strong>
+            <p>Testes com Cypress validando jornadas essenciais do sistema.</p>
+          </div>
+        </div>
+
+        <div class="auth-highlight-item">
+          <img class="auth-highlight-icon-img" src="/assets/icons/3d/3dicons-shield-dynamic-color.png" alt="" />
+          <div>
+            <strong>Segurança básica</strong>
+            <p>Autenticação com token JWT e senha protegida por hash.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-form-card">
+      <div class="auth-form-header">
+        <img class="auth-form-main-icon" src="/assets/icons/3d/3dicons-key-front-color.png" alt="" />
+        <p>BankQA Portfolio</p>
+        <h1>Entrar</h1>
+        <span>Acesse a aplicação para validar os fluxos financeiros.</span>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <label class="form-label">
+          E-mail
+          <input
+            class="auth-input"
+            data-cy="login-email"
+            name="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+            autocomplete="email"
+            required
+          />
+        </label>
+
+        <label class="form-label">
+          Senha
+          <input
+            class="auth-input"
+            data-cy="login-password"
+            name="password"
+            type="password"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+            required
+          />
+        </label>
+
+        <button class="auth-submit" data-cy="login-submit" type="submit">
+          Entrar
+        </button>
+      </form>
+
+      <p id="feedback" class="feedback" data-cy="login-feedback"></p>
+
+      <div class="auth-links">
+        <a class="link" href="/register">Criar conta</a>
+        <a class="link" href="/">Voltar para início</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
