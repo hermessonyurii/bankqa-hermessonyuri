@@ -20,9 +20,15 @@ Projeto de portfólio completo desenvolvido para demonstrar **práticas avançad
 **Hermesson Yuri** - QA Analyst | Automação de Testes | Qualidade de Software
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hermesson-yuri)
-[![GitHub](https://img.shields.io/badge/-GitHub-333?style=flat-square&logo=github&logoColor=white)](https://github.com/hermessonyuri)
-[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/hermessonyuri)
-[![Email](https://img.shields.io/badge/-Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:hermesson@email.com)
+[![GitHub](https://img.shields.io/badge/-GitHub-333?style=flat-square&logo=github&logoColor=white)](https://github.com/hermessonyurii)
+[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/hermessonyuri.yah)
+</div>
+
+---
+
+<div align="center">
+<img width="1742" height="906" alt="bankqa-dashboard" src="https://github.com/user-attachments/assets/2d084275-1ad8-48ee-9cf1-f327d954ab94" />
+
 
 </div>
 
@@ -30,81 +36,271 @@ Projeto de portfólio completo desenvolvido para demonstrar **práticas avançad
 
 <div align="center">
 
-![BankQA Dashboard](docs/images/bankqa-dashboard.png)
+<h2>📋 Visão Geral</h2>
+
+O **BankQA** é um projeto de portfólio que simula um sistema bancário transacional, desenvolvido para demonstrar práticas de **QA, automação de testes, validação de API, fluxos financeiros e integração contínua**.
+
+A proposta é validar regras de negócio críticas em um ambiente simples, porém estruturado, permitindo demonstrar visão de risco, organização técnica e capacidade de automação.
+
+---
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+### ✨ Funcionalidades
+
+- 👤 Cadastro de usuários
+- 🔐 Login com autenticação JWT
+- 💰 Depósito em conta
+- ➖ Saque com validação de saldo
+- 🔄 Transferência entre contas
+- 📊 Consulta de saldo e extrato
+
+    </td>
+    <td width="50%" valign="top">
+
+### 🎯 Objetivo
+
+- ✅ Validar regras financeiras críticas
+- 🔍 Cobrir cenários positivos e negativos
+- 🧪 Automatizar testes E2E e API
+- 📬 Apoiar testes manuais com Postman
+- 🐳 Executar ambiente com Docker
+- ⚙️ Rodar pipeline com GitHub Actions
+
+    </td>
+  </tr>
+</table>
+</div>
+
+<div align="center">
+
+## 🧰 Stack Tecnológico
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+
+### 🎨 Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+    </td>
+    <td width="33%" valign="top">
+
+### 🧠 Backend
+
+- Node.js 22
+- Express 4
+- JWT Auth
+- bcrypt
+
+    </td>
+    <td width="33%" valign="top">
+
+### 🗄️ Database
+
+- MySQL 8.4
+- Queries parametrizadas
+- Transações financeiras
+
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+
+### 🧪 Testing
+
+- Cypress E2E
+- Cypress API
+- Postman
+
+    </td>
+    <td width="33%" valign="top">
+
+### 🐳 DevOps
+
+- Docker
+- Docker Compose
+- Ambiente local reproduzível
+
+    </td>
+    <td width="33%" valign="top">
+
+### ⚙️ CI/CD
+
+- GitHub Actions
+- Pipeline automatizado
+- Execução em push/PR
+
+    </td>
+  </tr>
+</table>
+</div>
+
+---
+<div align="center">
+
+## 🚀 Características Principais
+
+O **BankQA** foi desenvolvido para simular um fluxo bancário transacional com foco em qualidade, rastreabilidade e validação automatizada.
+
+</div>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+### 🧠 Backend
+API REST com **Node.js** e **Express**, organizada em camadas para separar rotas, controllers, services e repositories.
+
+**Demonstra:** arquitetura simples, clara e manutenível.
+</td>
+
+<td width="50%" valign="top">
+
+### 🗄️ Banco de Dados
+Uso de **MySQL 8.4**, queries parametrizadas e controle transacional em operações financeiras.
+
+**Demonstra:** consistência, integridade e segurança nos dados.
+ </td>
+</tr>
+  <tr>
+   
+<td width="50%" valign="top">
+
+### 🔐 Segurança
+Autenticação com **JWT** e hash de senha com **bcrypt**.
+
+**Demonstra:** proteção de credenciais e controle de acesso em rotas privadas.
+
+  </td>
+    <td width="50%" valign="top">
+
+### 🧪 Testes
+Cobertura com **Cypress E2E**, testes de API e **Postman Collection**.
+
+**Demonstra:** validação de fluxos críticos, cenários positivos e negativos.
+
+</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### 🐳 Ambiente
+Execução com **Docker** e **Docker Compose**.
+
+**Demonstra:** ambiente local padronizado, replicável e simples de subir.
+  </td>
+    <td width="50%" valign="top">
+
+### ⚙️ CI/CD
+Pipeline automatizado com **GitHub Actions**.
+
+**Demonstra:** validação contínua do projeto em push e pull request.
+
+</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### 🖥️ Interface
+UI mínima com **HTML, CSS e JavaScript** para execução de testes E2E.
+
+**Demonstra:** suporte real aos fluxos automatizados sem excesso visual.
+
+ </td>
+    <td width="50%" valign="top">
+
+### 📚 Documentação
+Documentos de API, banco, plano de testes, estratégia, riscos e evidências.
+
+**Demonstra:** organização técnica e maturidade em QA.
+
+ </td>
+  </tr>
+</table>
+
+---
+<div align="center">
+
+## 💻 Stack Tecnológico
+
+</div>
+
+<p align="center">
+  O projeto utiliza uma stack voltada para desenvolvimento backend, automação de testes, ambiente containerizado e integração contínua.
+</p>
+
+<br />
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="42" height="42" alt="HTML5" />
+      <br />
+      <sub><strong>HTML5</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="42" height="42" alt="CSS3" />
+      <br />
+      <sub><strong>CSS3</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="42" height="42" alt="JavaScript" />
+      <br />
+      <sub><strong>JavaScript</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="42" height="42" alt="Node.js" />
+      <br />
+      <sub><strong>Node.js</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="42" height="42" alt="Express" />
+      <br />
+      <sub><strong>Express</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="42" height="42" alt="MySQL" />
+      <br />
+      <sub><strong>MySQL</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" width="42" height="42" alt="Postman" />
+      <br />
+      <sub><strong>Postman</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.simpleicons.org/cypress/69D3A7" width="42" height="42" alt="Cypress" />
+      <br />
+      <sub><strong>Cypress</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="42" height="42" alt="Docker" />
+      <br />
+      <sub><strong>Docker</strong></sub>
+    </td>
+    <td align="center" width="50">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" width="42" height="42" alt="GitHub Actions" />
+      <br />
+      <sub><strong>Actions</strong></sub>
+    </td>
+  </tr>
+</table>
 
 </div>
 
 ---
-
-## 📋 Visão Geral
-
-O **BankQA** simula um sistema bancário moderno com funcionalidades transacionais completas, projetado com **qualidade em cada camada**:
-
-<table>
-<tr>
-<td width="50%">
-
-### ✨ Funcionalidades
-- 👤 Cadastro e autenticação de usuários
-- 🔐 Login seguro com JWT
-- 💰 Depósito e saque
-- 🔄 Transferência entre contas
-- 📊 Consulta de saldo e extrato
-
-</td>
-<td width="50%">
-
-### 🎯 Propósito
-- ✅ Validar regras de negócio críticas
-- 🔍 Demonstrar visão de risco em fluxos transacionais
-- 🧪 Cobertura completa de cenários (positivos e negativos)
-- 🤖 Automação E2E e API com Cypress
-- 📈 Dados bem organizados para testes
-- 🐳 Fácil execução com Docker
-
-</td>
-</tr>
-</table>
-
----
-
-## 🚀 Características Principais
-
-| Categoria | Detalhe |
-|-----------|---------|
-| **Backend** | Node.js + Express com arquitetura em camadas |
-| **Database** | MySQL 8.4 com transações e queries parametrizadas |
-| **Segurança** | Hash de senha com bcrypt + Autenticação JWT |
-| **Testes** | Cypress (E2E) + Postman (API) com cobertura completa |
-| **Containerização** | Docker + Docker Compose para ambiente replicável |
-| **CI/CD** | GitHub Actions para pipeline automatizado |
-| **Interface** | UI mínima em HTML/CSS para testes E2E |
-| **Documentação** | Guias detalhados de QA, arquitetura e testes |
-
----
-
-## 💻 Stack Tecnológico
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                               │
-│  🎨 FRONTEND              🔌 BACKEND              💾 DATABASE │
-│  ├─ HTML5                 ├─ Node.js 22           └─ MySQL 8.4│
-│  ├─ CSS3                  ├─ Express 4            │           │
-│  └─ JavaScript            ├─ JWT Auth             └─ Queries  │
-│                           └─ Bcrypt (Hash)           Param.   │
-│                                                               │
-│  🧪 TESTING               📦 DEVOPS               🔄 CI/CD    │
-│  ├─ Cypress E2E           ├─ Docker               └─ GitHub   │
-│  ├─ Postman               └─ Docker Compose          Actions  │
-│  └─ Unit Tests                                                │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
+<div align="center">
 
 ## Architecture
+
+</div>
 
 ```mermaid
 flowchart TD
@@ -375,8 +571,10 @@ Authorization: Bearer {{token}}
 - dados obrigatórios ausentes
 
 ---
+<div align="center">
 
 ## CI/CD
+</div>
 
 ```mermaid
 flowchart LR
@@ -453,11 +651,43 @@ Este projeto foi estruturado para demonstrar habilidades práticas em QA, inclui
 
 ---
 
-## 👨‍💼 Sobre o Autor
+<div align="center">
+
+## 🤝 Uso do Projeto e Créditos
+
+Este projeto foi desenvolvido com dedicação e muito esforço, horas de sono "perdidas" para servir como portfólio, estudo e referência prática para mim e claro para os profissionais que desejam evoluir na área de **Qualidade de Software**.
+
+Sinta-se à vontade para estudar, clonar, adaptar e utilizar este projeto como base para seus próprios aprendizados.
+
+Ao utilizar este material como referência, peço apenas que mantenha os devidos créditos ao autor e indique meu LinkedIn:
 
 **Hermesson Yuri**  
-QA Analyst | Automação de Testes | Fluxos Transacionais | JavaScript
+[linkedin.com/in/hermesson-yuri](https://www.linkedin.com/in/hermesson-yuri)
 
-- **LinkedIn:** https://www.linkedin.com/in/hermesson-yuri/
-- **GitHub:** https://github.com/hermessonyuri
-- **Instagram:** https://www.instagram.com/hermessonyuri.yah/
+Reconhecer a origem de um projeto fortalece a comunidade, valoriza o trabalho de quem compartilha conhecimento e incentiva mais pessoas a contribuírem com materiais de qualidade.
+
+---
+
+## E para Futuros QA's:
+
+Se você está começando na área de QA, lembre-se:
+
+**Qualidade não é apenas encontrar bugs.**  
+Qualidade é entender o negócio, pensar em riscos, questionar cenários, validar comportamentos e ajudar a entregar software com mais confiança.
+
+Cada teste escrito, cada cenário analisado e cada erro documentado faz parte da sua evolução profissional.
+
+No dia **01/12/2025**, tudo começou em minha vida como QA. Eu não fazia ideia do que realmente era essa área. Já tinha ouvido falar, mas achava que QA era apenas ficar encontrando “bugs”. Quando iniciei como **Estagiário de QA de Software**, percebi que a realidade era muito maior.
+Cometi erros, sim. Falhei algumas vezes, mas não desisti. Eu me dediquei, procurei ajuda dos devs e tive o apoio de uma pessoa que faço questão de citar aqui: **Attus**.
+Esse cara me ajudou a me tornar quem estou me tornando hoje. Ele se tornou como um irmão para mim. Me deu várias dicas, me ensinou regras, me mostrou formas melhores de agir, de me comportar profissionalmente e até de reagir diante dos erros.
+Não sinto vergonha de falar isso, porque é errando que se aprende. Melhor ainda é aprender antes de errar, mas os nossos erros também nos fortalecem. E o Attus me ajudou a enxergar esse mundo de uma forma diferente.
+Por que estou dizendo isso?
+Porque quero que você saiba: se você pensa que vai fazer tudo sozinho, provavelmente não irá muito longe. Não tenha medo. Não sinta vergonha. Peça ajuda, corra atrás, estude, pratique e esteja disposto a aprender.
+É isso que vai fazer você evoluir e chegar ao sucesso. Então:
+
+Continue estudando, praticando e construindo projetos reais.  
+A consistência sempre vence a pressa.
+
+**Teste com propósito. Documente com clareza. Evolua todos os dias.**
+
+</div>
