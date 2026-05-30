@@ -677,9 +677,7 @@ Qualidade é entender o negócio, pensar em riscos, questionar cenários, valida
 
 Cada teste escrito, cada cenário analisado e cada erro documentado faz parte da sua evolução profissional.
 
-No dia **01/12/2025**, tudo começou em minha vida como QA. Eu não fazia ideia do que realmente era essa área. Já tinha ouvido falar, mas achava que QA era apenas ficar encontrando “bugs”. Quando recebi a oportunidade da **Patrícia** para iniciar como **Estagiário de QA de Software**, percebi que a realidade era muito maior.
-
-Sou muito Apreciativo pela oportunidade que a **Patrícia** me deu.
+No dia **01/12/2025**, tudo começou em minha vida como QA. Eu não fazia ideia do que realmente era essa área. Já tinha ouvido falar, mas achava que QA era apenas ficar encontrando “bugs”. Quando recebi a oportunidade  para iniciar como **Estagiário de QA de Software**, percebi que a realidade era muito maior.
 
 Entrei nesse mundo, cometi erros, sim. Falhei algumas vezes, mas não desisti. Eu me dediquei, procurei ajuda dos devs e tive o apoio de pessoas que faço questão de citar aqui: **Attus** e **Gustavo**.
 
